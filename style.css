@@ -14,6 +14,7 @@ html, body {
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background: #d3b25d;
+    line-height: 1.6;
 }
 
 /* NAV */
@@ -82,9 +83,11 @@ nav a:hover {
 .profile-info ul {
     list-style-type: square;
 }
-p{
+
+p {
     color: #000;
 }
+
 /* PROJECTS */
 .projects {
     display: flex;
@@ -103,43 +106,98 @@ p{
 .projects img:hover {
     transform: scale(1.05);
 }
-.projects p{
-    text-align: center;
-}
 
-/* CONTACT */
+/* CONTACT - ENHANCED */
 h1 {
     text-align: center;
+    margin-top: 20px;
 }
-p {
+
+.contact-info {
     text-align: center;
     color: #000;
+    font-size: 16px;
+    margin-bottom: 30px;
 }
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 50px auto;
+    background: rgba(102, 74, 34, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
 }
 
 form input,
 form textarea {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
     border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #664a22;
+    box-shadow: 0 0 5px rgba(102, 74, 34, 0.3);
+}
+
+form input:invalid:not(:placeholder-shown),
+form textarea:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+}
+
+form input:valid:not(:placeholder-shown),
+form textarea:valid:not(:placeholder-shown) {
+    border-color: #27ae60;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 form button {
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     border: none;
-    background: #333;
+    border-radius: 5px;
+    background: #664a22;
     color: white;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-    background: #013032;
+    background: #9f4f09;
+    transform: translateY(-2px);
+}
+
+form button:active {
+    transform: translateY(0);
 }
 
 /* HEADINGS */
@@ -160,11 +218,27 @@ h1 {
         width: 100%;
     }
 
+    .form-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
     form {
-        width: 90%;
+        padding: 20px;
     }
 
     .home h1 {
         font-size: 28px;
+    }
+
+    nav a {
+        margin: 0 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav a {
+        margin: 0 30px;
     }
 }
